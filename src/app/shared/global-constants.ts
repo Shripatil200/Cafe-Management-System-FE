@@ -10,6 +10,8 @@ export class GlobalConstants{
 
     public static contactNumberRegex: string = "^[0-9]{10}$";
 
+    public static passwordRegex: string = "^.{8,}$"
+
 
     public static error: string = "error";
 

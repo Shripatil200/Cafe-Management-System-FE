@@ -10,13 +10,28 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) {
 
-   }
+  }
 
 
-   signip(data: any){
+  signip(data: any) {
+    return this.httpClient.post(this.url +
+      "/user/signup", data, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json')
+    });
+  }
+
+  forgotPassword(data: any) {
+    return this.httpClient.post(this.url +
+      "/password/forgotPassword", data, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json')
+    });
+  }
+
+
+  resetPassword(data: any){
     return this.httpClient.post(this.url + 
-      "/user/signup",data,{
-        headers:new HttpHeaders().set('Content-Type', 'application/json')
-      })
-   }
+      "/password/resetPassword", data,{
+        headers: new HttpHeaders().set('Content-Type', 'application/json')
+      });
+  }
 }
