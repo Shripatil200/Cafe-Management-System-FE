@@ -22,6 +22,7 @@ export class AppSidebarComponent implements OnDestroy {
   ) {
     this.tokenPayload = jwtDecode(this.token);
     this.userRole = this.tokenPayload.role;
+    
     this.mobileQuery = media.matchMedia('(min-width: 768px)')
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);

@@ -57,7 +57,7 @@ export class ChangePasswordComponent implements OnInit {
       this.ngxService.stop();
       this.responseMessage = response?.message;
       this.dialogRef.close();
-      this.snackbarService.openSnackBar(this.responseMessage, "");
+      this.snackbarService.openSnackBar(this.responseMessage, "success");
     }, (error) => {
       console.log(error);
       this.ngxService.stop();
