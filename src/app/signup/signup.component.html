@@ -18,7 +18,6 @@
                 <mat-error *ngIf="signupForm.controls.name.touched && signupForm.controls.name.invalid">
                     <span *ngIf="signupForm.controls.name.errors.required">This field is mandatory.</span>
                     <span *ngIf="signupForm.controls.name.errors.pattern">This field is invalid.</span>
-
                 </mat-error>
             </mat-form-field>
 
@@ -57,7 +56,7 @@
                 </button>
                 <mat-error *ngIf="signupForm.controls.password.touched && signupForm.controls.password.invalid">
                     <span *ngIf="signupForm.controls.password.errors.required">This field is mandatory.</span>
-
+                    <span *ngIf="signupForm.controls.password.errors.pattern">This field is invalid (password should contains 8 characters).</span>
                 </mat-error>
             </mat-form-field>
 
@@ -76,7 +75,7 @@
                     <span *ngIf="signupForm.controls.confirmPassword.errors.required">This field is mandatory.</span>
                 </mat-error>
                 <mat-hint *ngIf="validateSubmit() && !(signupForm.controls.confirmPassword.invalid)">
-                    <span>New Password & Confirm password does not match.</span>
+                    <span>Password & Confirm password does not match.</span>
                 </mat-hint>
             </mat-form-field>
 

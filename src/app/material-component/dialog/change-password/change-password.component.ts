@@ -30,7 +30,7 @@ export class ChangePasswordComponent implements OnInit {
 
     this.changePasswordForm = this.formBuilder.group({
       oldPassword: [null, [Validators.required]],
-      newPassword: [null, [Validators.required]],
+      newPassword: [null, [Validators.required, Validators.pattern(GlobalConstants.passwordRegex)]],
       confirmPassword: [null, [Validators.required]]
     })
   }
