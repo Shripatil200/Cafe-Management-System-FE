@@ -11,20 +11,26 @@ export class BillService {
   url = environment.apiUrl;
   constructor(private httpClient: HttpClient) { }
 
-  generateReport(data:any){
-    return this.httpClient.post(this.url + 
-      "/bill/generateReport",data,{
-        headers:new HttpHeaders().set('Content-Type','Application/json')
-      }
+  generateReport(data: any) {
+    return this.httpClient.post(this.url +
+      "/bill/generateReport", data, {
+      headers: new HttpHeaders().set('Content-Type', 'Application/json')
+    }
     )
   }
 
-  getPdf(data: any):Observable<Blob>{
-    return this.httpClient.post(this.url+"/bill/getPdf", data,{responseType: 'blob'});
+  getPdf(data: any): Observable<Blob> {
+    return this.httpClient.post(this.url + "/bill/getPdf", data, { responseType: 'blob' });
   }
 
 
-  getBills(){
-    return this.httpClient.get(this.url+ "/bill/getBills");
+  getBills() {
+    return this.httpClient.get(this.url + "/bill/getBills");
+  }
+
+  delete(id:any){
+    return this.httpClient.post(this.url + "/bill/delete/"+ id,{
+      headers: new HttpHeaders().set('Content-Type', 'Application/json')
+    });
   }
 }
